@@ -1,19 +1,20 @@
-host: hostname.com
+host: localhost:8080
 target: /api/files/
 
 files:
-  - name: my_pretty_archive
-    file: archive.zip
-    actions:
-      - download
-      - unpack
-  - name: my_text_file
-    file: text_file.txt
-    actions:
-      - download
-  - name: my_internal_archive
-    file: internal.7z
-    actions:
-      - unpack
-    dependencies:
-      - my_pretty_archive
+ - name: my_pretty_archive
+   file: archive.zip
+   actions:
+   - download
+   - unpack
+ - name: my_text_file
+   file: text_file.txt
+   actions:
+   - download
+ - name: my_internal_archive
+   file: internal.7z
+   actions:
+   - unpack
+   dependencies:
+   - my_pretty_archive
+

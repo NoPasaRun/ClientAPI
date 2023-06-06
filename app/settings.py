@@ -1,7 +1,15 @@
 import os
 
 
+def get_archive_names(index: int = 0):
+    while True:
+        index += 1
+        yield f"internal_{index}.7z"
+
+
 root = os.path.abspath(".")
+DEFAULT_ARCHIVE_NAMES = get_archive_names()
+DEFAULT_FILE_STORAGE = os.path.join(root, "data")
 
 
 def find_file(file_name: str, base_dir: str = root):
